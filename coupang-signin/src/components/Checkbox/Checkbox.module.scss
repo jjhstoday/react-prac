@@ -1,0 +1,69 @@
+.container {
+  position: absolute;
+  left: 50%;
+  transform: translate3d(-1188%, 0, 0);
+}
+
+.checkbox {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  margin-top: 2px;
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  z-index: 999;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 30px;
+  position: absolute;
+  display: inline-block;
+  width: 70px;
+  top: 7px;
+  cursor: pointer;
+  color: #555555;
+}
+
+.visible {
+  font-size: 12px;
+  font-weight: 400;
+  display: inline-block;
+  background: #f4f4f4;
+  width: 275px;
+  height: 30px;
+  padding: 7px 6px;
+  text-align: center;
+  box-sizing: border-box;
+  position: absolute;
+  top: 34px;
+  left: 0;
+}
+
+.visibleArrow {
+  position: absolute;
+  top: 27px;
+  left: 5px;
+}
+
+.checkedIcon,
+.uncheckedIcon {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  margin-top: 2px;
+  cursor: pointer;
+  background: #f4f4f4;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 0.8;
+  border: 1px solid #cccccc;
+  box-sizing: border-box;
+}
+
+.checkedIcon {
+  background-image: url(../../assets/Checkbox/checked.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}

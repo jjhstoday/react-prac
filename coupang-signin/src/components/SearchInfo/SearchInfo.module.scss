@@ -1,0 +1,15 @@
+.searchInfo {
+  font-size: 16px;
+  font-weight: 400;
+  color: #0074e9;
+  text-decoration: none;
+  position: relative;
+  left: 56%;
+  top: 2px;
+
+  .arrow {
+    width: 8px;
+    position: absolute;
+    right: -14px;
+  }
+}

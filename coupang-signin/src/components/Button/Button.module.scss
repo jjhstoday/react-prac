@@ -1,0 +1,36 @@
+.signin,
+.signup {
+  width: 575px;
+  height: 66px;
+  border-radius: 2px;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  display: block;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  outline: none;
+  margin: 0 auto;
+}
+
+.signin {
+  // background: #0074e9;
+  background: #97aabd;
+  color: #ffffff;
+  margin-top: 54px;
+}
+
+.signup {
+  background: #ffffff;
+  color: #0074e9;
+  margin-top: 23px;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.divider {
+  margin: 22px auto 0;
+  display: block;
+  width: 575px;
+  border: 1px solid #cccccc;
+  border-top: none;
+}

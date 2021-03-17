@@ -1,0 +1,12 @@
+.validation {
+  color: #e52528;
+  font-size: 15px;
+  font-weight: 500;
+  width: 545px;
+  margin: -10px auto 19px;
+  display: none;
+
+  &.errorVisible {
+    display: block;
+  }
+}

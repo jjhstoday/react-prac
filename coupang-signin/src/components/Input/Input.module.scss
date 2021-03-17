@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 571px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.email,
+.password {
+  width: 526px;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 14px;
+  box-sizing: border-box;
+  color: #111111;
+  border: 1px solid #929292;
+  border-left: none;
+  opacity: 0.5;
+  margin-bottom: 20px;
+  outline: none;
+
+  &.error {
+    border: 1px solid #e52528;
+    border-left: none;
+    margin-bottom: 49px;
+  }
+}
+
+.icon {
+  border: 1px solid rgba(146, 146, 146, 0.5);
+  box-sizing: border-box;
+}
+
+.iconEmail,
+.iconPassword {
+  border-right: none;
+
+  &.error {
+    border: 1px solid #e52528;
+    border-right: none;
+  }
+}
+
+.iconPasswordVisible {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  border: none;
+  height: 48px;
+}
