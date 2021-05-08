@@ -1,5 +1,5 @@
 import React from 'react'
-import { ReactComponent as Search } from '../../assets/Search/search.svg';
+import { ReactComponent as Search } from '../../assets/SearchInfo/search.svg';
 import { searchInfo, arrow } from './SearchInfo.module.scss';
 
 
