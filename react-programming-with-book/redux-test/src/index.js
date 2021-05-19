@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux';
-import timeLineReducer, {
+import timelineReducer, {
   addTimeline,
   removeTimeline,
   editTimeline,
@@ -12,7 +12,7 @@ import friendReducer, {
 } from './friend/state';
 
 const reducer = combineReducers({
-  timeline: timeLineReducer,
+  timeline: timelineReducer,
   friend: friendReducer
 });
 
