@@ -1,10 +1,13 @@
 import React from 'react';
 
-export default function TimelineList({ timelines }) {
+export default function TimelineList({ timelines, onLike }) {
   return (
     <ul>
-      {timelines.map(timeline => (
-        <li key={timeline.id}>{timeline.desc}</li>
+      {timelines.map(({ id, desc, likes }) => (
+        <li key={id}>
+          {desc}
+          <button data-id={id} onClick={onLike}>{`좋아요(${likes})`}</button>
+        </li>
       ))}
     </ul>
   );
