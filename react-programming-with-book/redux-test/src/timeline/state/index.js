@@ -2,16 +2,17 @@ import createReducer from '../../common/createReducer';
 import createItemsLogic from '../../common/createItemsLogic';
 import mergeReducers from '../../common/mergeReducers';
 
+const { add, remove, edit, reducer: timelinesReducer } = createItemsLogic(
+  'timelines'
+);
+
 export const types = {
   INCREASE_NEXT_PAGE: 'timeline/INCREASE_NEXT_PAGE',
   REQUEST_LIKE: 'timeline/REQUEST_LIKE',
   ADD_LIKE: 'timeline/ADD_LIKE',
-  SET_LOADiNG: 'timeline/SET_LOADiNG'
+  SET_LOADiNG: 'timeline/SET_LOADiNG',
+  SET_ERROR: 'timeline/SET_ERROR'
 };
-
-const { add, remove, edit, reducer: timelinesReducer } = createItemsLogic(
-  'timelines'
-);
 
 export const actions = {
   addTimeline: add,
@@ -23,10 +24,14 @@ export const actions = {
   setLoading: isLoading => ({
     type: types.SET_LOADiNG,
     isLoading
+  }),
+  setError: error => ({
+    type: types.SET_ERROR,
+    error
   })
 };
 
-const INITIAL_STATE = { nextPage: 0, isLoading: false };
+const INITIAL_STATE = { nextPage: 0, isLoading: false, error: '' };
 
 const reducer = createReducer(INITIAL_STATE, {
   [types.INCREASE_NEXT_PAGE]: state => (state.nextPage += 1),
@@ -38,7 +43,8 @@ const reducer = createReducer(INITIAL_STATE, {
       timeline.likes += action.value;
     }
   },
-  [types.SET_LOADiNG]: (state, action) => (state.isLoading = action.isLoading)
+  [types.SET_LOADiNG]: (state, action) => (state.isLoading = action.isLoading),
+  [types.SET_ERROR]: (state, action) => (state.error = action.error)
 });
 
 const reducers = [reducer, timelinesReducer];
