@@ -6,9 +6,18 @@ import { getNextTimeline } from '../../common/mockData';
 
 export default function TimelineMain() {
   const [, forceUpdate] = useReducer(v => v + 1, 0);
+
   useEffect(() => {
-    const unsubscribe = store.subscribe(() => forceUpdate());
-    return () => unsubscribe;
+    let prevTimeline = store.getState().timeline.timelines;
+
+    const unsubscribe = store.subscribe(() => {
+      const timelines = store.getState().timeline.timelines;
+      if (prevTimeline !== timelines) {
+        forceUpdate();
+      }
+      prevTimeline = timelines;
+    });
+    return () => unsubscribe();
   }, []);
 
   function onAdd() {

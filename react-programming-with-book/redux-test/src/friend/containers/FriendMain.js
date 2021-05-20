@@ -6,8 +6,16 @@ import FriendList from '../components/FriendList';
 
 export default function FriendMain() {
   const [, forceUpdate] = useReducer(v => v + 1, 0);
+
   useEffect(() => {
-    const unsubscribe = store.subscribe(() => forceUpdate());
+    let prevFriends = store.getState().friend.friends;
+    const unsubscribe = store.subscribe(() => {
+      const friends = store.getState().friend.friends;
+      if (prevFriends !== friends) {
+        forceUpdate();
+      }
+      prevFriends = friends;
+    });
     return () => unsubscribe();
   }, []);
 
