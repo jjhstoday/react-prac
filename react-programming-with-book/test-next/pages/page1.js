@@ -1,10 +1,11 @@
 import Head from 'next/head';
+import Icon from '../static/icon.png';
 
 export default function Page1() {
   return (
     <div>
       <p>This is home page.</p>
-      <img src='/static/icon.png' alt='' />
+      <img src={Icon} alt='' />
       <Head>
         <title>page1</title>
       </Head>
